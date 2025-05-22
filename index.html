@@ -82,6 +82,34 @@
             width: 100%;
             height: 500px;
         }
+        
+        /* Loading spinner */
+        .spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #4285f4;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            z-index: 10;
+        }
+        @keyframes spin {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+        
+        /* Hide iframe initially */
+        #pdfViewer {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        #pdfViewer.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -91,6 +119,7 @@
             src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1U1gTdN53oizAnPBkSezio-lnW58uMPlC" 
             allowfullscreen>
         </iframe>
+        <div class="spinner" id="spinner"></div>
     </div>
     
     <!-- Floating Action Button -->
@@ -113,6 +142,24 @@
     </div>
 
     <script>
+        // Show spinner while PDF loads
+        const pdfViewer = document.getElementById('pdfViewer');
+        const spinner = document.getElementById('spinner');
+        
+        pdfViewer.onload = function() {
+            spinner.style.display = 'none';
+            pdfViewer.classList.add('loaded');
+        };
+        
+        // Fallback in case iframe fails to load
+        setTimeout(function() {
+            if (spinner.style.display !== 'none') {
+                spinner.style.display = 'none';
+                pdfViewer.classList.add('loaded');
+            }
+        }, 10000); // 10 second timeout
+        
+        // Modal functions
         function showModal() {
             document.getElementById('formModal').style.display = 'flex';
         }
@@ -127,9 +174,6 @@
                 closeModal();
             }
         });
-
-        // Optional: Auto-show modal after 30 seconds
-        setTimeout(showModal, 30000);
     </script>
 </body>
 </html>
