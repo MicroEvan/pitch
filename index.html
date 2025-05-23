@@ -1,193 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puku HR App Pitch Presentation</title>
-    <!-- Open Graph for Facebook, WhatsApp, LinkedIn -->
-  <meta property="og:title" content="Puku HR App Pitch Presentation" />
-  <meta property="og:description" content="Explore our powerful HR app with this compelling pitch. Built for all team sizes." />
-  <meta property="og:image" content="https://github.com/MicroEvan/pitch/docs/pitch-presentation.png" />
-  <meta property="og:url" content="https://github.com/MicroEvan/pitch/index.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Puku HR" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puku HR App Pitch Presentation</title>
 
-  <!-- Extra for WhatsApp (uses Open Graph, but make sure image is accessible) -->
-  <meta name="theme-color" content="#007bff" /> <!-- Optional for richer WhatsApp preview on Android -->
+  <!-- Open Graph for Facebook, WhatsApp, LinkedIn -->
+  <meta property="og:title" content="Puku HR App Pitch Presentation"/>
+  <meta property="og:description" content="Discover how Puku HR App transforms workforce management for teams of all sizes. This pitch outlines features, benefits, and our innovative vision for the future of HR tech." />
+  <meta property="og:image" content="https://raw.githubusercontent.com/MicroEvan/pitch/main/docs/pitch-presentation.png" />
+  <meta property="og:url" content="https://pitch.pukusolutions.com/"/>
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Puku HR"/>
+  <meta property="article:author" content="Puku Solutions"/>
+  <meta property="article:published_time" content="2025-05-23T12:00:00Z"/>
 
-  <!-- Twitter cards (not used by WhatsApp or Facebook, but good for X/Twitter) -->
+  <!-- WhatsApp (uses Open Graph) -->
+  <meta name="theme-color" content="#007bff" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Puku HR App Pitch Presentation" />
-  <meta name="twitter:description" content="Explore our powerful HR app with this compelling pitch. Built for all team sizes." />
-  <meta name="twitter:image" content="https://github.com/MicroEvan/pitch/docs/pitch-presentation.png" />
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-        }
-        .pdf-container {
-            width: 100%;
-            height: 100vh;
-            position: relative;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        /* Floating Button Styles */
-        .floating-btn {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #4285f4;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            cursor: pointer;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            z-index: 100;
-            transition: all 0.3s;
-        }
-        .floating-btn:hover {
-            background: #3367d6;
-            transform: scale(1.1);
-        }
-        
-        /* Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.7);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            width: 80%;
-            max-width: 700px;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-        }
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            font-size: 24px;
-            cursor: pointer;
-            color: white;
-        }
-        .form-container {
-            width: 100%;
-            height: 500px;
-        }
-        
-        /* Loading spinner */
-        .spinner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 4px solid rgba(0, 0, 0, 0.1);
-            border-radius: 50%;
-            border-top: 4px solid #4285f4;
-            width: 40px;
-            height: 40px;
-            animation: spin 1s linear infinite;
-            z-index: 10;
-        }
-        @keyframes spin {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        
-        /* Hide iframe initially */
-        #pdfViewer {
-            opacity: 0;
-            transition: opacity 0.5s ease;
-        }
-        #pdfViewer.loaded {
-            opacity: 1;
-        }
-    </style>
+  <meta name="twitter:description" content="Discover how Puku HR App transforms workforce management for teams of all sizes. This pitch outlines features, benefits, and our innovative vision for the future of HR tech." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/MicroEvan/pitch/main/docs/pitch-presentation.png" />
+
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+    .pdf-container {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4285f4;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 100;
+      transition: all 0.3s;
+    }
+    .floating-btn:hover {
+      background: #3367d6;
+      transform: scale(1.1);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.7);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 80%;
+      max-width: 700px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: 24px;
+      cursor: pointer;
+      color: white;
+    }
+    .form-container {
+      width: 100%;
+      height: 500px;
+    }
+
+    .spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      border-top: 4px solid #4285f4;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      z-index: 10;
+    }
+    @keyframes spin {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    #pdfViewer {
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    #pdfViewer.loaded {
+      opacity: 1;
+    }
+  </style>
 </head>
 <body>
-    <div class="pdf-container">
-        <iframe 
-            id="pdfViewer"
-            src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1U1gTdN53oizAnPBkSezio-lnW58uMPlC" 
-            allowfullscreen>
-        </iframe>
-        <div class="spinner" id="spinner"></div>
-    </div>
-    
-    <!-- Floating Action Button -->
-    <div class="floating-btn" onclick="showModal()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-    </div>
-    
-    <!-- Modal Form -->
-    <div id="formModal" class="modal">
-        <span class="close-btn" onclick="closeModal()">&times;</span>
-        <div class="modal-content">
-            <div class="form-container">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdV3wnMnOGgsm7HYgCyz2LsvJGadaaKaa4nhVjjkxEwXBOhQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-            </div>
-        </div>
-    </div>
+  <div class="pdf-container">
+    <iframe 
+      id="pdfViewer"
+      src="https://drive.google.com/viewerng/viewer?embedded=true&url=https://drive.google.com/uc?id=1U1gTdN53oizAnPBkSezio-lnW58uMPlC" 
+      allowfullscreen>
+    </iframe>
+    <div class="spinner" id="spinner"></div>
+  </div>
 
-    <script>
-        // Show spinner while PDF loads
-        const pdfViewer = document.getElementById('pdfViewer');
-        const spinner = document.getElementById('spinner');
-        
-        pdfViewer.onload = function() {
-            spinner.style.display = 'none';
-            pdfViewer.classList.add('loaded');
-        };
-        
-        // Fallback in case iframe fails to load
-        setTimeout(function() {
-            if (spinner.style.display !== 'none') {
-                spinner.style.display = 'none';
-                pdfViewer.classList.add('loaded');
-            }
-        }, 10000); // 10 second timeout
-        
-        // Modal functions
-        function showModal() {
-            document.getElementById('formModal').style.display = 'flex';
-        }
-        
-        function closeModal() {
-            document.getElementById('formModal').style.display = 'none';
-        }
-        
-        // Close modal when clicking outside
-        window.addEventListener('click', function(event) {
-            if (event.target == document.getElementById('formModal')) {
-                closeModal();
-            }
-        });
-    </script>
+  <!-- Floating Action Button -->
+  <div class="floating-btn" onclick="showModal()">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+    </svg>
+  </div>
+
+  <!-- Modal Form -->
+  <div id="formModal" class="modal">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScdV3wnMnOGgsm7HYgCyz2LsvJGadaaKaa4nhVjjkxEwXBOhQ/viewform?embedded=true" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const pdfViewer = document.getElementById('pdfViewer');
+    const spinner = document.getElementById('spinner');
+
+    pdfViewer.onload = function() {
+      spinner.style.display = 'none';
+      pdfViewer.classList.add('loaded');
+    };
+
+    setTimeout(function() {
+      if (spinner.style.display !== 'none') {
+        spinner.style.display = 'none';
+        pdfViewer.classList.add('loaded');
+      }
+    }, 10000);
+
+    function showModal() {
+      document.getElementById('formModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('formModal').style.display = 'none';
+    }
+
+    window.addEventListener('click', function(event) {
+      if (event.target == document.getElementById('formModal')) {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
